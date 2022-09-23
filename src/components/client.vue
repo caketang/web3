@@ -1,7 +1,7 @@
 <template>
   <div class="">
     {{obj}}
-    <div @click="send">send</div>
+    <div @click="connect">connect</div>
     <div @click="getBlanace">获取余额</div>
     <div>余额{{bal}}</div>
   </div>
@@ -28,7 +28,7 @@ ethereum.on('chainChanged', () => {
             console.log('account changed')
             window.location.reload()
 })
-async function send(){
+async function connect(){
 
     const accounts = await ethereum.request({method: 'eth_requestAccounts'});
     console.log(accounts,'accounts')
